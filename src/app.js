@@ -2,6 +2,8 @@ const express = require('express')       //npm module
 const path = require('path')     //node js module
 const hbs = require('hbs')       // requiring handlebars npm module
 const app = express()     //express is treated as a function 
+const port = process.env.PORT || 3000
+
 
 const postmanRequest = require('postman-request')
 const geoCode = require('./utitlities/geoCode.js')
@@ -113,7 +115,7 @@ app.get('*',(req,res)=>{   // '*' means if the route in the url in the browser d
 ////////////////////////////////////////////////////////////
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
 
-    console.log('server is runing sucessfully ')
+    console.log('server is runing sucessfully on port ' + port )
 })
