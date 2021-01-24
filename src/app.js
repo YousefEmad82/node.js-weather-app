@@ -62,7 +62,7 @@ app.get('/weather',(req,res)=>{
         }
         const{latitude,longitude, placeName } = geoData
         foreCast(latitude, longitude, (error, froecastData) => {
-            const{currentTemp,feelsLikeTemp} = froecastData
+            const{currentTemp,feelsLikeTemp, weather_descriptions,wind_speed,humidity,is_day } = froecastData
             if (error) {
                 return res.send({
                     error : error
@@ -72,6 +72,10 @@ app.get('/weather',(req,res)=>{
                 address : placeName,
                 currentTemp :  currentTemp,
                 feelsLikeTemp :   feelsLikeTemp,
+                weather_descriptions : weather_descriptions,
+                wind_speed : wind_speed,
+                humidity : humidity,
+                is_day : is_day,
             })
            
         })

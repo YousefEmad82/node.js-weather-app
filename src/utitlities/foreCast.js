@@ -15,11 +15,16 @@ const foreCast = (latitude,longitude,callback)=>{
         }
         else{
             const{current} = body
-            const{temperature  ,feelslike  } = current 
+            const{temperature  ,feelslike,weather_descriptions,wind_speed,humidity,is_day  } = current 
        
          callback(undefined, {
              currentTemp : temperature,  
              feelsLikeTemp : feelslike ,
+             weather_descriptions : weather_descriptions[0],
+             wind_speed : wind_speed,
+             humidity : humidity,
+             is_day : is_day,
+
          })
      }
      
