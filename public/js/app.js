@@ -11,6 +11,7 @@ const messageFour = document.querySelector('#p4')
 const messageFive = document.querySelector('#p5')
 const messageSix = document.querySelector('#p6')
 const messageSeven = document.querySelector('#p7')
+const messageEight = document.querySelector('#p8')
 
 
 
@@ -25,6 +26,7 @@ weatherForm.addEventListener('submit', (e) => {
       messageFive.textContent = ''
       messageSix.textContent = ''
       messageSeven.textContent = ''
+      messageEight.textContent = ''
 
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
@@ -37,8 +39,9 @@ weatherForm.addEventListener('submit', (e) => {
                 messageThree.textContent = "the apparent temperature is : " + data.feelsLikeTemp
                 messageFour.textContent = "the weather description is : " + data.weather_descriptions 
                 messageFive.textContent = "the  wind speed is : " +  data.wind_speed 
-                messageSix.textContent = "the humidity is : " + data.humidity 
-                messageSeven.textContent = "is it day  ? : " +  data.is_day
+                messageSix.textContent = 'the wind direction is : '  +  " ' " + data.wind_dir + " ' "
+                messageSeven.textContent = "the humidity is : " + data.humidity 
+                messageEight.textContent = "is it day  ? : " +  data.is_day
 
             }
         })

@@ -15,7 +15,7 @@ const foreCast = (latitude,longitude,callback)=>{
         }
         else{
             const{current} = body
-            const{temperature  ,feelslike,weather_descriptions,wind_speed,humidity,is_day  } = current 
+            const{temperature  ,feelslike,weather_descriptions,wind_speed,humidity,is_day,wind_dir  } = current 
        
          callback(undefined, {
              currentTemp : temperature,  
@@ -24,6 +24,7 @@ const foreCast = (latitude,longitude,callback)=>{
              wind_speed : wind_speed,
              humidity : humidity,
              is_day : is_day,
+             wind_dir : wind_dir,
 
          })
      }
